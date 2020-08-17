@@ -5,13 +5,12 @@ import model.FixedEmployee;
 import model.OutsourceEmployee;
 import reader.EmployeeReader;
 
-import java.io.File;
-import java.util.ArrayList;
+import java.util.List;
 
 public abstract class BaseEmployeeReader implements EmployeeReader {
 
     @Override
-    abstract public ArrayList<Employee> readEmployee(String path);
+    abstract public List<Employee> readEmployee(String path);
 
     protected static Employee declareEmployee(String line) {
         String[] tokens = line.split(" ");

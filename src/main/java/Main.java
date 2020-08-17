@@ -8,6 +8,7 @@ import writer.FileEmployeeWriter;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Main {
 
@@ -15,7 +16,7 @@ public class Main {
         EmployeeReader eReader = new HttpEmployeeReader();
         EmployeeWriter eWriter = new FileEmployeeWriter();
 
-        ArrayList<Employee> allEmployee = eReader.readEmployee("");
+        List<Employee> allEmployee = eReader.readEmployee("https://raw.githubusercontent.com/LanaGA/EmployeeInheritance/master/src/main/java/input.json");
         Collections.sort(allEmployee);
         eWriter.writeEmployee(new File("sortedData.txt"), allEmployee);
 

@@ -5,12 +5,13 @@ import model.Employee;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FileEmployeeReader extends BaseEmployeeReader {
 
     @Override
-    public ArrayList<Employee> readEmployee(String path) {
+    public List<Employee> readEmployee(String path) {
         ArrayList<Employee> allEmployee = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
@@ -19,8 +20,6 @@ public class FileEmployeeReader extends BaseEmployeeReader {
                 allEmployee.add(declareEmployee(line));
                 line = reader.readLine();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

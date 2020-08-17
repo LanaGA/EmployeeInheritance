@@ -1,20 +1,26 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class FixedEmployee extends Employee {
 
-    public FixedEmployee(int id, String name, double rate) {
-        this.id = id;
-        this.rate = rate;
-        this.name = name;
+    @JsonCreator
+    public FixedEmployee(@JsonProperty("id") int id,
+                         @JsonProperty("name") String name,
+                         @JsonProperty("rate") double rate) {
+        super(id, name, rate);
+    }
 
-        type = "fixed";
+    @Override
+    public String getType() {
+        return "fixed";
     }
 
     @Override
     public double wage() {
-        return rate;
+        return getRate();
     }
-
 
 
 }

@@ -1,15 +1,24 @@
 package model;
 
-public class OutsourceEmployee extends Employee {
-    public OutsourceEmployee(int id, String name, double rate){
-        this.id = id;
-        this.rate = rate;
-        this.name = name;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-        type = "outsource";
+public class OutsourceEmployee extends Employee {
+
+    @JsonCreator
+    public OutsourceEmployee(@JsonProperty("id") int id,
+                             @JsonProperty("name") String name,
+                             @JsonProperty("rate") double rate) {
+        super(id, name, rate);
     }
+
+    @Override
+    public String getType() {
+        return "outsource";
+    }
+
     @Override
     public double wage() {
-        return 20.8*8*rate;
+        return 20.8*8*getRate();
     }
 }

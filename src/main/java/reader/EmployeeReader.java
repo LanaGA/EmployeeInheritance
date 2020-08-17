@@ -2,9 +2,8 @@ package reader;
 
 import model.Employee;
 
-import java.io.File;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface EmployeeReader {
-    ArrayList<Employee> readEmployee(String path);
+    List<Employee> readEmployee(String path);
 }
