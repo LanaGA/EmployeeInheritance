@@ -75,10 +75,6 @@ public abstract class Employee implements Comparable<Employee> {
         return "Name: " + name + ", id: " + id + ", Wage: " + wage() + ", Type: " + getType();
     }
 
-    public String printAllInfo() {
-        return "Name: " + name + ", id: " + id + ", Wage: " + wage() + ", Type: " + getType() + "\n";
-    }
-
     public String save() {
         return getType() + " " + id + " " + rate + " " + name + "\n";
     }
