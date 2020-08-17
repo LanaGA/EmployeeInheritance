@@ -1,0 +1,44 @@
+[
+  {
+    "id": 123,
+    "name": "Jonh",
+    "rate": 1000.0,
+    "type": "Fixed"
+  },
+  {
+    "id": 139,
+    "name": "JonhB",
+    "rate": 1500.0,
+    "type": "Fixed"
+  },
+  {
+    "id": 147,
+    "name": "Jonh",
+    "rate": 1300.0,
+    "type": "Fixed"
+  },
+  {
+    "id": 159,
+    "name": "Joanna",
+    "rate": 13.0,
+    "type": "Outsource"
+  },
+  {
+    "id": 168,
+    "name": "JoannaB",
+    "rate": 12.0,
+    "type": "Outsource"
+  },
+  {
+    "id": 13,
+    "name": "Joanna",
+    "rate": 14.0,
+    "type": "Outsource"
+  },
+  {
+    "id": 89,
+    "name": "Jonh",
+    "rate": 12.0,
+    "type": "Outsource"
+  }
+]
