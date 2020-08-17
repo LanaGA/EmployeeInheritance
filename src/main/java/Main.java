@@ -25,14 +25,17 @@ public class Main {
             List<Employee> allEmployee = eReader.readEmployee("https://raw.githubusercontent.com/LanaGA/EmployeeInheritance/master/src/main/java/input.json");
 
             //Упорядочить всю последовательность рабочих по убыванию среднемесячной зарплаты.
+            fos.write("Упорядочить всю последовательность рабочих по убыванию среднемесячной зарплаты\n".getBytes());
             Collections.sort(allEmployee);
             eWriter.writeEmployee(fos, allEmployee);
 
             //Вывести первые 5 имен работников из полученного выше списка
+            fos.write("Вывести первые 5 имен работников из полученного выше списка\n".getBytes());
             eWriter.writeEmployeeName(fos, allEmployee.subList(0, 5));
 
             //Вывести последние 3 идентификатора работников из полученного выше списка
-            eWriter.writeEmployeeId(fos, allEmployee.subList(allEmployee.size() - 4, allEmployee.size() - 1));
+            fos.write("Вывести последние 3 идентификатора работников из полученного выше списка\n".getBytes());
+            eWriter.writeEmployeeId(fos, allEmployee.subList(allEmployee.size() - 3, allEmployee.size()));
 
         }
     }

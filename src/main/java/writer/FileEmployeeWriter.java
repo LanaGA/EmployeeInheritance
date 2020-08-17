@@ -14,7 +14,8 @@ public class FileEmployeeWriter implements EmployeeWriter {
     @Override
     public void writeEmployee(FileOutputStream writer, List<Employee> allEmployee) throws IOException {
             for (Employee inter : allEmployee) {
-                writer.write(inter.save().getBytes());
+                writer.write(inter.toString().getBytes());
+                writer.write('\n');
             }
         writer.write('\n');
     }
