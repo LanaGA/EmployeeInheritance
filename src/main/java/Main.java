@@ -22,7 +22,7 @@ public class Main {
         EmployeeWriter eWriter = new FileEmployeeWriter();
 
         try (FileOutputStream fos = new FileOutputStream(OUTPUTFILE)) {
-            List<Employee> allEmployee = eReader.readEmployee("https://raw.githubusercontent.com/LanaGA/EmployeeInheritance/master/src/main/java/input.json");
+            List<Employee> allEmployee = eReader.readEmployee("https://raw.githubusercontent.com/LanaGA/EmployeeInheritance/feature_HttpReader/src/main/java/input.json");
 
             //Упорядочить всю последовательность рабочих по убыванию среднемесячной зарплаты.
             fos.write("Упорядочить всю последовательность рабочих по убыванию среднемесячной зарплаты\n".getBytes());
