@@ -5,21 +5,23 @@ import model.FixedEmployee;
 import model.OutsourceEmployee;
 import reader.EmployeeReader;
 
+import java.io.IOException;
 import java.util.List;
 
 public abstract class BaseEmployeeReader implements EmployeeReader {
 
     @Override
-    abstract public List<Employee> readEmployee(String path);
+    abstract public List<Employee> readEmployee(String path) throws IOException;
 
     protected static Employee declareEmployee(String line) {
         String[] tokens = line.split(" ");
-        switch (tokens[0].toLowerCase()) {
+        return switch (tokens[0].toLowerCase()) {
             case "fixed":
-                return new FixedEmployee(Integer.parseInt(tokens[1]), tokens[2], Double.parseDouble(tokens[3]));
+                new FixedEmployee(Integer.parseInt(tokens[1]), tokens[2], Double.parseDouble(tokens[3]));
             case "outsource":
-                return new OutsourceEmployee(Integer.parseInt(tokens[1]), tokens[2], Double.parseDouble(tokens[3]));
-        }
-        throw new ClassCastException();
+                new OutsourceEmployee(Integer.parseInt(tokens[1]), tokens[2], Double.parseDouble(tokens[3]));
+            default:
+                throw new ClassCastException();
+        };
     }
 }

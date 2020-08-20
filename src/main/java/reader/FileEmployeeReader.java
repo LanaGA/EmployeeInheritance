@@ -11,7 +11,7 @@ import java.util.List;
 public class FileEmployeeReader extends BaseEmployeeReader {
 
     @Override
-    public List<Employee> readEmployee(String path) {
+    public List<Employee> readEmployee(String path) throws IOException {
         ArrayList<Employee> allEmployee = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
@@ -20,10 +20,8 @@ public class FileEmployeeReader extends BaseEmployeeReader {
                 allEmployee.add(declareEmployee(line));
                 line = reader.readLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            return allEmployee;
         }
-        return allEmployee;
     }
 
 }

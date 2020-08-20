@@ -11,7 +11,4 @@ import java.util.List;
 public interface EmployeeWriter {
     void writeEmployee(FileOutputStream writer, List<Employee> allEmployee) throws IOException;
 
-    void writeEmployeeName(FileOutputStream writer, List<Employee> allEmployee) throws IOException;
-
-    void writeEmployeeId(FileOutputStream writer, List<Employee> allEmployee) throws IOException;
 }

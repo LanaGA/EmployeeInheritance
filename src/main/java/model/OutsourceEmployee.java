@@ -1,14 +1,12 @@
 package model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import static constant.WorkingDaysConstant.WORKING_HOURS_PER_MONTH;
 
 public class OutsourceEmployee extends Employee {
 
-    @JsonCreator
-    public OutsourceEmployee(@JsonProperty("id") int id,
-                             @JsonProperty("name") String name,
-                             @JsonProperty("rate") double rate) {
+    public OutsourceEmployee(int id,
+                             String name,
+                             double rate) {
         super(id, name, rate);
     }
 
@@ -19,6 +17,6 @@ public class OutsourceEmployee extends Employee {
 
     @Override
     public double wage() {
-        return 20.8*8*getRate();
+        return WORKING_HOURS_PER_MONTH * getRate();
     }
 }

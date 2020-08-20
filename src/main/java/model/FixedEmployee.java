@@ -1,14 +1,10 @@
 package model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class FixedEmployee extends Employee {
 
-    @JsonCreator
-    public FixedEmployee(@JsonProperty("id") int id,
-                         @JsonProperty("name") String name,
-                         @JsonProperty("rate") double rate) {
+    public FixedEmployee(int id,
+                         String name,
+                         double rate) {
         super(id, name, rate);
     }
 
@@ -21,6 +17,5 @@ public class FixedEmployee extends Employee {
     public double wage() {
         return getRate();
     }
-
 
 }
