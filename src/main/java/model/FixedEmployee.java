@@ -1,6 +1,7 @@
 package model;
 
 public class FixedEmployee extends Employee {
+    public static final String TYPE = "fixed";
 
     public FixedEmployee(int id,
                          String name,

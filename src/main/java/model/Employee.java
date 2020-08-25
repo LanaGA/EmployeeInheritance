@@ -18,6 +18,13 @@ public abstract class Employee {
 
     abstract public String getType();
 
+    public abstract double wage();
+
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", id: " + id + ", Wage: " + wage() + ", Type: " + getType();
+    }
     public String getName() {
         return name;
     }
@@ -40,15 +47,6 @@ public abstract class Employee {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-
-    public abstract double wage();
-
-
-    @Override
-    public String toString() {
-        return "Name: " + name + ", id: " + id + ", Wage: " + wage() + ", Type: " + getType();
     }
 
 }

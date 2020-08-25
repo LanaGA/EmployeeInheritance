@@ -4,6 +4,8 @@ import static constant.WorkingDaysConstant.WORKING_HOURS_PER_MONTH;
 
 public class OutsourceEmployee extends Employee {
 
+    public static final String TYPE = "outsource";
+
     public OutsourceEmployee(int id,
                              String name,
                              double rate) {

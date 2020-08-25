@@ -8,11 +8,11 @@ import java.util.Comparator;
 public class ComparatorEmployee implements Comparator<Employee> {
 
     @Override
-    public int compare(Employee o1, Employee o2) {
-        if (o1.wage() == o2.wage()) {
-            return o1.getName().compareTo(o2.getName());
+    public int compare(Employee firstEmployee, Employee secondEmployee) {
+        if (firstEmployee.wage() == secondEmployee.wage()) {
+            return firstEmployee.getName().compareTo(secondEmployee.getName());
         }
-        if (o1.wage() < o2.wage()) {
+        if (firstEmployee.wage() < secondEmployee.wage()) {
             return 1;
         }
         return -1;
