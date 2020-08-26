@@ -3,8 +3,7 @@ import model.Employee;
 import okhttp3.OkHttpClient;
 import reader.EmployeeReader;
 import reader.HttpEmployeeReader;
-import writer.EmployeeWriter;
-import writer.FileEmployeeAllWriter;
+import writer.*;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,9 +17,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         EmployeeReader eReader = new HttpEmployeeReader(new OkHttpClient());
         EmployeeWriter allWriter = new FileEmployeeAllWriter();
-        EmployeeWriter nameWriter = new FileEmployeeAllWriter();
-        EmployeeWriter idWriter = new FileEmployeeAllWriter();
-        EmployeeWriter saveWriter = new FileEmployeeAllWriter();
+        EmployeeWriter nameWriter = new FileEmployeeNameWriter();
+        EmployeeWriter idWriter = new FileEmployeeIdWriter();
+        EmployeeWriter saveWriter = new FileEmployeeSaveWriter();
 
         try (FileOutputStream fos = new FileOutputStream(OUTPUTFILE)) {
             List<Employee> allEmployee = eReader.readEmployee("https://raw.githubusercontent.com/LanaGA/EmployeeInheritance/feature_HttpReader/src/main/java/input.json");
