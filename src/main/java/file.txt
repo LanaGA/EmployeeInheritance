@@ -1,0 +1,6 @@
+Fixed 1 Jonh 1000.0
+Fixed 2 JonhA 1500.0
+Fixed 3 JonhB 1300.0
+Outsource 4 Joanna 13.0
+Outsource 5 JoannaA 13.0
+Outsource 6 JoannaB 14.0
